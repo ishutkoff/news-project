@@ -1,15 +1,16 @@
 type Mods = Record<string, boolean | string>
 
+//FIXME: Тест
 export const classNames = (
 	cls: string,
-	mods: Mods,
-	additional: string[]
+	mods?: Mods,
+	additional?: string[]
 ): string => {
 	return [
 		cls,
 		...Object.entries(mods)
 			.filter(([key, value]) => Boolean(value))
 			.map(([key, value]) => key),
-		...additional,
+		...additional.filter(Boolean),
 	].join(' ')
 }

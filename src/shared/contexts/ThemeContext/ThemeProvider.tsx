@@ -2,7 +2,7 @@ import {
 	LOCAL_STORAGE_THEME_KEY,
 	Theme,
 	ThemeContext,
-} from 'app/providers/ThemeProvider/lib/ThemeContext'
+} from 'shared/contexts/ThemeContext/ThemeContext'
 import { FC, useMemo, useState } from 'react'
 
 const ThemeProvider: FC = ({ children }) => {

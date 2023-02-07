@@ -1,5 +1,5 @@
 import React from 'react'
-import { classNames } from '../../../shared/lib/className'
+import { classNames } from 'shared/lib'
 
 export default function MainPage() {
 	return (
