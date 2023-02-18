@@ -1,15 +1,23 @@
-import { Link } from 'react-router-dom'
 import './styles/index.scss'
 import { useTheme } from 'shared/contexts/ThemeContext'
 import { AppRouter } from 'app/router/'
-import { Navbar } from 'widgets/ui/Navbar/Navbar'
+import { Navbar } from 'widgets/Navbar'
+import { Sidebar } from 'widgets/Sidebar'
+import { Suspense } from 'react'
 
 const App = () => {
 	const { theme } = useTheme()
 	return (
 		<div className={`app ${theme}`}>
-			<Navbar />
-			<AppRouter />
+			<Suspense fallback=''>
+				<div className='main-wrapper'>
+					<Sidebar />
+					<div className='content-page'>
+						<Navbar />
+						<AppRouter />
+					</div>
+				</div>
+			</Suspense>
 		</div>
 	)
 }

@@ -1,7 +1,8 @@
 .Navbar {
 	display: flex;
 	align-items: center;
-	justify-content: end;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--primary-bg-color);
 	width: 100%;
 	padding: 0 20px;
 	height: var(--navbar-height);
@@ -12,4 +13,9 @@
 	&:last-child {
 		margin-right: 0;
 	}
+}
+.NavbarWrapper {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 }

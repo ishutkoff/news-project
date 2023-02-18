@@ -7,7 +7,6 @@ declare module '*.scss' {
 }
 declare module '*.svg' {
 	import * as React from 'react'
-
 	export const ReactComponent: React.FunctionComponent<
 		React.SVGProps<SVGSVGElement> & { title?: string }
 	>
@@ -19,3 +18,5 @@ declare module '*.svg' {
 declare module '*.png'
 declare module '*.jpeg'
 declare module '*.gif'
+
+declare const __IS_DEV__: boolean

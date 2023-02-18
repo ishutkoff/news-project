@@ -1,6 +1,5 @@
 type Mods = Record<string, boolean | string>
 
-//FIXME: Тест
 export const classNames = (
 	cls: string,
 	mods?: Mods,
