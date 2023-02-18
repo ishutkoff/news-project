@@ -1,2 +1,3 @@
-import { classNames } from './className'
-export { classNames }
+import { classNames } from './className';
+
+export { classNames };
