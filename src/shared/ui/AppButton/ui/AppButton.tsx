@@ -3,12 +3,12 @@ import { classNames } from 'shared/lib';
 import cls from './AppButton.module.scss';
 
 export type ValueOf<T> = T[keyof T]
-// eslint-disable-next-line no-undef
-export type ThemeButton = ValueOf<typeof ThemeButton>
 
 export const ThemeButtonType = {
     CLEAR: 'clear',
 } as const;
+
+export type ThemeButton = ValueOf<typeof ThemeButtonType>
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string

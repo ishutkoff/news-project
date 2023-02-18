@@ -1,29 +1,29 @@
 .root {
-	position: relative;
-	width: 200px;
-	height: 100vh;
-	padding: calc(var(--navbar-height) + 20px) 20px 20px 20px;
-	background-color: var(--primary-dark-bg-color);
-	box-shadow: -8px -1px 16px 0px #201f1f;
-	transition: width 0.2s;
+    position: relative;
+    width: 200px;
+    height: 100vh;
+    padding: calc(var(--navbar-height) + 20px) 20px 20px 20px;
+    background-color: var(--primary-dark-bg-color);
+    box-shadow: -8px -1px 16px 0 #201f1f;
+    transition: width 0.2s;
 }
 
 .collapsed {
-	width: 60px;
+    width: 60px;
 }
 
 .collapse-button {
-	position: absolute;
-	right: 20px;
-	top: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 
-	svg {
-		fill: var(--primary-color);
-	}
+    svg {
+        fill: var(--primary-color);
+    }
 }
 
 .navbar-theme-selector {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
