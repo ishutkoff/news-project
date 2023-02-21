@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { classNames } from 'shared/lib';
 import { AppButton } from 'shared/ui/AppButton';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
