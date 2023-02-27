@@ -3,7 +3,7 @@ import { useTheme } from 'shared/contexts/ThemeContext';
 import { AppRouter } from 'app/router/';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 
 function App() {
     const { theme } = useTheme();

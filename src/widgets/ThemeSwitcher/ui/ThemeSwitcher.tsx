@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTheme, Theme } from 'shared/contexts/ThemeContext';
-import { classNames } from 'shared/lib';
+import { classNames } from 'shared/lib/className/className';
 import SunIcon from 'shared/assets/icons/sun.svg';
 import MoonIcon from 'shared/assets/icons/moon.svg';
 

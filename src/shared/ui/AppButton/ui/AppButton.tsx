@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC } from 'react';
-import { classNames } from 'shared/lib';
+import { classNames } from 'shared/lib/className/className';
 import cls from './AppButton.module.scss';
 
 export type ValueOf<T> = T[keyof T]
@@ -12,7 +12,7 @@ export type ThemeButton = ValueOf<typeof ThemeButtonType>
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
-    theme: ThemeButton
+    theme?: ThemeButton
 }
 export const AppButton: FC<AppButtonProps> = (props) => {
     const {
