@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/className/className';
 import SunIcon from 'shared/assets/icons/sun.svg';
 import MoonIcon from 'shared/assets/icons/moon.svg';
 
-import { AppButton } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton/AppButton';
 
 interface ThemeSwitcherProps {
     className?: string

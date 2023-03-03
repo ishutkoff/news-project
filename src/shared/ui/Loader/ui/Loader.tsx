@@ -14,7 +14,7 @@ const Loader = (props:LoaderPropTypes) => {
     const { className, theme } = props;
 
     return (
-        <div className={classNames(cls.Loader, { }, [className, theme])} />
+        <div className={classNames(cls.Loader, {}, [className, cls[theme]])} />
     );
 };
 

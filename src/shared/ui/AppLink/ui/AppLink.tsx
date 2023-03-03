@@ -4,11 +4,14 @@ import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib/className/className';
 import cls from './AppLink.module.scss';
 
-type ColorMod = 'primary' | 'secondary'
+export enum AppLinkColorMod {
+    PRIMARY = 'primary',
+    SECONDARY = 'secondary',
+}
 
 interface AppLinkProps extends LinkProps {
     className?: string
-    colorMod: ColorMod
+    colorMod: AppLinkColorMod
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {

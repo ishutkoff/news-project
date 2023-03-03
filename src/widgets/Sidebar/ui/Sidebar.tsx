@@ -1,13 +1,10 @@
 import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/className/className';
-import { AppButton } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton/AppButton';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { useTranslation } from 'react-i18next';
-// @ts-ignore
 import CollapseIcon from './icons/collapse.svg';
-// @ts-ignore
 import ExpandIcon from './icons/expand.svg';
-// @ts-ignore
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {

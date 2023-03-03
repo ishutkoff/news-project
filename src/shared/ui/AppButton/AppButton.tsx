@@ -6,6 +6,7 @@ export type ValueOf<T> = T[keyof T]
 
 export const ThemeButtonType = {
     CLEAR: 'clear',
+    OUTLINE: 'outline',
 } as const;
 
 export type ThemeButton = ValueOf<typeof ThemeButtonType>
