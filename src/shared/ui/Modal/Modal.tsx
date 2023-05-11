@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/className/className';
 import React, { ReactNode } from 'react';
+import { useTheme } from 'shared/contexts/ThemeContext';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -8,7 +9,9 @@ interface ModalProps {
     isOpen: boolean
     onClose?: () => void
 }
+
 export const Modal = (props: ModalProps) => {
+    const { theme } = useTheme();
     const {
         className, children, isOpen, onClose,
     } = props;
@@ -28,7 +31,7 @@ export const Modal = (props: ModalProps) => {
     };
 
     return (
-        <div className={classNames(cls.root, mods, [className])}>
+        <div className={classNames(cls.root, mods, [className, theme])}>
             <div
                 onClick={onCloseHandler}
                 className={classNames(cls.overlay, {}, [className])}
