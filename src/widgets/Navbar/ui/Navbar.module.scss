@@ -22,3 +22,18 @@
     width: 100%;
     justify-content: space-between;
 }
+
+.Left {}
+
+.Right {
+    display: flex;
+}
+
+.LoginButton {
+    border: 1px solid var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-size: 14px;
+    margin-left: 10px;
+}

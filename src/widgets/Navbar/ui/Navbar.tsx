@@ -1,9 +1,12 @@
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/className/className';
 import { AppLink } from 'shared/ui/AppLink/';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
 import { AppLinkColorMod } from 'shared/ui/AppLink/ui/AppLink';
+import { Portal } from 'shared/ui/Portal/Portal';
+import { Modal } from 'shared/ui/Modal/Modal';
+import { AppButton, ThemeButtonType } from 'shared/ui/AppButton/AppButton';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -13,10 +16,15 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation();
+    const [isAuthModal, setIsAuthModal] = useState(false);
+    const toggleAuthModal = useCallback(() => {
+        setIsAuthModal(!isAuthModal);
+    }, []);
+
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.NavbarWrapper}>
-                <div>
+                <div className={cls.Left}>
                     <AppLink
                         to="/"
                         className={cls.NavbarLink}
@@ -32,7 +40,23 @@ export const Navbar: FC<NavbarProps> = (props) => {
                         {t('О сайте')}
                     </AppLink>
                 </div>
-                <LangSwitcher />
+                <div className={cls.Right}>
+                    <LangSwitcher />
+                    <AppButton
+                        className={cls.LoginButton}
+                        onClick={toggleAuthModal}
+                        theme={ThemeButtonType.OUTLINE}
+                    >
+                        {t('Войти')}
+                    </AppButton>
+                    <Portal>
+                        <Modal
+                            isOpen={isAuthModal}
+                            onClose={() => setIsAuthModal(false)}
+                        />
+                    </Portal>
+                </div>
+
             </div>
         </div>
     );

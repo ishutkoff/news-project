@@ -42,6 +42,8 @@ module.exports = {
         'linebreak-style': [2, 'unix'],
         'no-unused-vars': 'warn',
         'react/jsx-props-no-spreading': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-shadow': 'off',
         'no-underscore-dangle': 'off',
