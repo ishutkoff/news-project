@@ -53,7 +53,10 @@ export const Navbar: FC<NavbarProps> = (props) => {
                         <Modal
                             isOpen={isAuthModal}
                             onClose={() => setIsAuthModal(false)}
-                        />
+                        >
+                            sdfsdf
+
+                        </Modal>
                     </Portal>
                 </div>
 
