@@ -7,6 +7,7 @@ import { AppLinkColorMod } from 'shared/ui/AppLink/ui/AppLink';
 import { Portal } from 'shared/ui/Portal/Portal';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { AppButton, ThemeButtonType } from 'shared/ui/AppButton/AppButton';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -17,8 +18,12 @@ export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const toggleAuthModal = useCallback(() => {
-        setIsAuthModal(!isAuthModal);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -44,19 +49,16 @@ export const Navbar: FC<NavbarProps> = (props) => {
                     <LangSwitcher />
                     <AppButton
                         className={cls.LoginButton}
-                        onClick={toggleAuthModal}
+                        onClick={onShowModal}
                         theme={ThemeButtonType.OUTLINE}
                     >
                         {t('Войти')}
                     </AppButton>
                     <Portal>
-                        <Modal
+                        <LoginModal
                             isOpen={isAuthModal}
-                            onClose={() => setIsAuthModal(false)}
-                        >
-                            sdfsdf
-
-                        </Modal>
+                            onClose={onCloseModal}
+                        />
                     </Portal>
                 </div>
 
